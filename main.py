@@ -1,33 +1,31 @@
 # main.py
 
 import pygame
-import random
-from fractal import generate_fractal
-from utils import SID_COUNT
+from fractal import draw_fractal
 
-# Initialize Pygame
+# Инициализация Pygame
 pygame.init()
 
-# Set up display
-WIDTH, HEIGHT = 800, 600
+# Настройка дисплея
+WIDTH, HEIGHT = 1920, 1080
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Real-Time Fractal Simulation")
+pygame.display.set_caption("Уникальная генерация фракталов")
 
-# Main loop
+# Главный цикл
 running = True
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    # Clear the screen
+    # Очистка экрана
     screen.fill((0, 0, 0))
 
-    # Generate and draw a random fractal
-    generate_fractal(screen, WIDTH, HEIGHT)
+    # Генерация и рисование уникального фрактала
+    draw_fractal(screen, WIDTH, HEIGHT)
 
-    # Update the display
+    # Обновление дисплея
     pygame.display.flip()
 
-# Quit Pygame
+# Выход из Pygame
 pygame.quit()
